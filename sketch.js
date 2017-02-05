@@ -3,8 +3,14 @@
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
-  background(127);
+  background(255);
   smooth();
+  
+  textSize(12);
+  textFont("Helvetica");
+  textAlign(CENTER, CENTER);
+  textStyle(BOLD);
+  text("The Celcilvote Medudnarntinsisg", windowWidth/2, windowHeight/2);
   
 }
 
