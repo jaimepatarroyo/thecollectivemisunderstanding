@@ -6,7 +6,7 @@ var textOut = "";
 var collectiveArray = ['o', 'l', 'l', 'e', 'c', 't', 'i', 'v'];
 var misunderstandingArray = ['i', 's', 'u', 'n', 'd', 'e', 'r', 's', 't', 'a', 'n', 'd', 'i', 'n'];
 
-var numAnts = 1000;
+var numAnts = 5000;
 var ants = [];
 
 function setup() {
