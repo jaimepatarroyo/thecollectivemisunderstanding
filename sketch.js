@@ -13,10 +13,10 @@ function setup() {
   createCanvas(windowWidth, windowHeight);
   background(255);
   smooth();
-  
+
   shuffle(collectiveArray, true);
   shuffle(misunderstandingArray, true);
-  
+
   textOut = "The C";
   for (var i = 0; i<collectiveArray.length; i++)
     textOut += collectiveArray[i];
@@ -24,7 +24,7 @@ function setup() {
   for (var i = 0; i<misunderstandingArray.length; i++)
     textOut += misunderstandingArray[i];
   textOut += "g";
-  
+
   textSize(12);
   textFont("Helvetica");
   textAlign(CENTER, CENTER);
@@ -53,7 +53,7 @@ function draw() {
     ants[i].move(ants[i-1].x, ants[i-1].y);
     ants[i].show();
   }
-  
+
   textSize(12);
   textFont("Helvetica");
   textAlign(CENTER, CENTER);
@@ -66,6 +66,14 @@ function Ant(_x, _y) {
   this.y = _y;
 
   this.move = function(_x, _y) {
+    if (dist(mouseX, mouseY, this.x, this.y) < 20) {
+      if (mouseX - this.x > 0) this.x -= 2;
+      else if (mouseX - this.x < 0) this.x += 2;
+      
+      if (mouseY - this.y > 0) this.y -= 2;
+      else if (mouseY - this.y < 0) this.y += 2;
+    }
+
     this.x += random(-1, 1);
     this.y += random(-1, 1);
 
@@ -83,4 +91,8 @@ function Ant(_x, _y) {
 function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
   background(255);
+}
+
+function mouseDragged() {
+  return false;
 }
